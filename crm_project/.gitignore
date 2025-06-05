@@ -135,7 +135,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+/home/jh29dev/customer-management-system/venv
 # Spyder project settings
 .spyderproject
 .spyproject
