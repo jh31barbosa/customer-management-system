@@ -46,7 +46,7 @@ Custom-built CRM system developed for small business clients to streamline custo
 
 > **Note:** Due to client confidentiality, a sanitized demo version is available
 
-- **Demo Application:** [Live Demo](your-demo-link)
+- **Demo Application:** [Live Demo](crm_project/template/Lading/LandingPage.html)
 - **Admin Dashboard:** [Dashboard Demo](your-dashboard-link)
 
 **Demo Credentials:**
