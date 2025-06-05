@@ -95,7 +95,7 @@ class Customer(models.Model):
 
 class AppointmentNote(models.Model):
     """Notes added to appointments"""
-    appointment = models.ForeignKey(Appointment, on_delete=models.CASCADE, related_name='appointment_notes')
+    appointment = models.ForeignKey('Appointment', on_delete=models.CASCADE, related_name='appointment_notes')
     note = models.TextField(verbose_name='Nota')
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)

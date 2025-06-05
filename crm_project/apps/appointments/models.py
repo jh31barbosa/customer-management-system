@@ -66,4 +66,28 @@ class Appointment(models.Model):
     
     # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return f"{self.title} - {self.customer.name} ({self.start_datetime})"
+    
+    def get_absolute_url(self):
+        return reverse('appointments:detail', kwargs={'pk': self.pk})
+    
+    @property
+    def duration(self):
+        """Calculate appointment duration"""
+        return self.end_datetime - self.start_datetime
+    
+    def is_past(self):
+        """Check if appointment is in the past"""
+        return self.end_datetime < timezone.now()
+    
+    def is_today(self):
+        """Check if appointment is today"""
+        return self.start_datetime.date() == timezone.now().date()
+    
+    class Meta:
+        verbose_name = 'Agendamento'
+        verbose_name_plural = 'Agendamentos'
+        ordering = ['start_datetime']
